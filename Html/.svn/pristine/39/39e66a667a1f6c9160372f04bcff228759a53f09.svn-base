@@ -1,0 +1,35 @@
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var android_d = '{$site_info.android_download}';
+var ios_d = '{$site_info.ios_download}';
+var chat_url = '{$site_info.chat_url}';
+</script>
+<script src="__TMPL__/public/rrsb_pc/js/index.js"></script>
+<!-- <script src="__TMPL__/public/rrsb_pc/js/about.js"></script> -->
+<script>
+function onDown(t){
+	if(t==1){
+	window.open('{$site_info.android_download}')
+	}
+	if(t==2){
+	window.open('{$site_info.ios_download}')
+	}
+}
+
+var l_x = {$site_info.l_x};
+var l_y = {$site_info.l_y};
+var l_des = `{:htmlspecialchars_decode($site_info.l_des)}`;
+
+function one_page(){
+ if($(".pagination").html() == ""){
+	$(".pagination").html('<li class="page-item disabled"><span class="page-link">&lt;&lt;</span></li> <li class="active page-item disabled"><span class="page-link">1</span></li><li class="page-item disabled"><span class="page-link">&gt;&gt;</span></li>');
+ }
+}
+one_page();
+</script>
+<foreach name="category_menu" item="cvo">
+	<if condition="$cvo.action != $cvo.show_action && $cvo.action == $action">
+	<script>$("#action_{$cvo.show_action}").attr("style","border-bottom: 2px solid #4177fe");</script>
+	</if>
+</foreach>

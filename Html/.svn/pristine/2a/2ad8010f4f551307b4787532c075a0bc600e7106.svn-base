@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <include file="portal@index/header_info" />
+    <title>{$seo.site_seo_title} - 首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="__TMPL__/public/rrsb_pc/css/index.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <include file="portal@index/header" />
+
+        <div style="height: 80px"></div>
+        <div class="home">
+            <transition name="fade">
+                <qr-code v-if="showDown"></qr-code>
+            </transition>
+            <div class="back-to-top">
+                <div class="t-back" :style="!isShow1&&`background: #95aab8;color: #fff`" @click="backTop"
+                    @mouseenter="isShow1 = false" @mouseleave="isShow1 = true">
+                    <img v-if="isShow1" src="__TMPL__/public/rrsb_pc/image/zhiding.png" />
+                    <p v-else style="font-size: 16px;padding: 3px;">返回顶部</p>
+                </div>
+                <div class="t-kefu" @click="isOver = true" :style="!isShow2&&`background: #95aab8;color: #fff`"
+                    @mouseenter="isShow2 = false" @mouseleave="isShow2 = true">
+                    <img v-if="isShow2" src="__TMPL__/public/rrsb_pc/image/kefu.png" />
+                    <p style="font-size: 16px;padding: 3px;" v-else>在线咨询</p>
+                </div>
+            </div>
+            <ke-fu v-if="isOver" v-on:closeDig="onClose"></ke-fu>
+            <div class="h-banner">
+                <img src="__TMPL__/public/rrsb_pc/image/banner.png" width="100%" />
+                <!-- <div class="b-content">
+            <div class="c-img">
+			
+                <img src="__TMPL__/public/rrsb_pc/image/daohanglan-logo.png" />
+                人人社保
+            </div>
+            <div class="c-bold">互联网人力资源服务</div>
+            <div class="c-radius">社保公积金代缴，蓝领找工作，社保周边服务</div>
+            </div> -->
+            </div>
+            <div class="h-inner">
+                <div class="h-title">
+                    <h3>人力资源服务</h3>
+                    <p>让人人都轻松享受社保福利</p>
+                </div>
+                <div class="h-content">
+                    <h3>社保服务</h3>
+                    <ul class="clearfix">
+                        <li v-popover:popover1>
+                            <img src="__TMPL__/public/rrsb_pc/image/zizhujsb.png" />
+                            <span>自助缴社保</span>
+                        </li>
+                        <li v-popover:popover2>
+                            <img src="__TMPL__/public/rrsb_pc/image/bujiaosheb.png" />
+                            <span>补缴社保</span>
+                        </li>
+                        <li v-popover:popover3>
+                            <img src="__TMPL__/public/rrsb_pc/image/shebaofenx.png" />
+                            <span>社保分析</span>
+                        </li>
+                        <li v-popover:popover4>
+                            <img src="__TMPL__/public/rrsb_pc/image/zhengcejied.png" />
+                            <span>政策解读</span>
+                        </li>
+                    </ul>
+                    <h3>公积金服务</h3>
+                    <ul class="clearfix">
+                        <li v-popover:popover5>
+                            <img src="__TMPL__/public/rrsb_pc/image/zizhujiaogjj.png" />
+                            <span>自助缴公积金</span>
+                        </li>
+                        <li v-popover:popover6>
+                            <img src="__TMPL__/public/rrsb_pc/image/bujiaogjj.png" />
+                            <span>补缴公积金</span>
+                        </li>
+                        <li v-popover:popover7>
+                            <img src="__TMPL__/public/rrsb_pc/image/gjjbaike.png" />
+                            <span>公积金百科</span>
+                        </li>
+                    </ul>
+                    <h3>小工具</h3>
+                    <ul class="clearfix">
+                        <li v-popover:popover8>
+                            <img src="__TMPL__/public/rrsb_pc/image/shebaojsq.png" />
+                            <span>社保计算器</span>
+                        </li>
+                        <li v-popover:popover9>
+                            <img src="__TMPL__/public/rrsb_pc/image/dingdianyiy.png" />
+                            <span>定点医院</span>
+                        </li>
+                        <li v-popover:popover10>
+                            <img src="__TMPL__/public/rrsb_pc/image/goufangces.png" />
+                            <span>购房测试</span>
+                        </li>
+                        <li v-popover:popover11>
+                            <img src="__TMPL__/public/rrsb_pc/image/daikuanjsq.png" />
+                            <span>贷款计算器</span>
+                        </li>
+                        <li v-popover:popover12>
+                            <img src="__TMPL__/public/rrsb_pc/image/daikuanlil.png" />
+                            <span>贷款利率</span>
+                        </li>
+                    </ul>
+                    <el-popover v-for="i in 12" :key="i" :ref="`popover${i}`" placement="top" trigger="click">
+                        <div style="padding: 0 20px;z-index:-1">
+                            <h3 style="text-align: center;padding: 10px; font-size: 20px;font-weight: 400">立即下载</h3>
+                            <img src="__TMPL__/public/rrsb_pc/image/tanchuang-ewm.png" width="200" />
+                            <p style="text-align: center;padding-top: 8px;font-size: 16px;color: #999999">扫描下载【人人社保】APP
+                            </p>
+                            <p style="text-align: center;padding-top: 8px;font-size: 16px;color: #999999">随时随地咨询您的社保管家
+                            </p>
+                        </div>
+                    </el-popover>
+                </div>
+                <div class="h-down" ref="here">
+                    <h3>立即下载【人人社保】客户端</h3>
+                    <div class="d-btn"><img src="__TMPL__/public/rrsb_pc/image/kehuduan-az.png"
+                            onclick="onDown('and')" /><img src="__TMPL__/public/rrsb_pc/image/kehuduan-pg.png"
+                            onclick="onDown('ios')" /></div>
+                </div>
+                <div class="h-img">
+                    <img src="__TMPL__/public/rrsb_pc/image/kehuduan-bg.png" />
+                    <div class="i-more">
+                        <img src="__TMPL__/public/rrsb_pc/image/gengduogn.png" />
+                        <p>更多功能敬请期待</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <include file="portal@index/footer" />
+    </div>
+    <include file="portal@index/footer_js" />
+</body>
+
+</html>

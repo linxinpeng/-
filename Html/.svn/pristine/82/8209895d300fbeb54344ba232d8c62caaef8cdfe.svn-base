@@ -1,0 +1,23 @@
+<script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var android_d = '{$site_info.android_download}';
+var ios_d = '{$site_info.ios_download}';
+var chat_url = '{$site_info.chat_url}';
+</script>
+<script src="__TMPL__/public/rrsb_pc/js/about.js"></script>
+<script>
+function onDown(t){
+	if(t=='and'){
+	window.open('{$site_info.android_download}')
+	}
+	if(t=='ios'){
+	window.open('{$site_info.ios_download}')
+	}
+}
+
+var l_x = {$site_info.l_x};
+var l_y = {$site_info.l_y};
+var l_des = `{:htmlspecialchars_decode($site_info.l_des)}`;
+
+</script>

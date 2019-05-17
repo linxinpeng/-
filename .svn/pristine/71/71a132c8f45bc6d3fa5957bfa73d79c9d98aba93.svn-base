@@ -1,0 +1,28 @@
+var position = new AMap.LngLat(118.194686,24.490583);
+
+var map = new AMap.Map("container", {resizeEnable: true,zoom: 17,center:position});
+
+var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, 0)});
+
+var markerContent = `
+    <div class="mk-info">
+        <h3>厦门链脉数据服务有限公司</h3>
+        <p>地址：厦门市思明区台东路157号观音山商务中心2号楼603室</p>
+    </div>
+`
+
+var marker = new AMap.Marker({
+    position:position,
+    map:map
+})
+marker.content = markerContent;
+marker.on('click', markerClick);
+marker.emit('click', {target: marker});
+
+
+function markerClick(e) {
+    infoWindow.setContent(e.target.content);
+    infoWindow.open(map, e.target.getPosition());
+}
+
+map.setFitView();

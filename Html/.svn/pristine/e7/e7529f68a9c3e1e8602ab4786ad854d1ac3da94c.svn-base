@@ -1,0 +1,30 @@
+<div class="footer">
+	<el-popover
+		:ref="`popover`"
+		placement="top"
+		trigger="hover">
+		<div>
+			<img src="__TMPL__/public/rrsb_pc/image/wx.png" width="200"/>
+		</div>
+	</el-popover>
+	<div class="f-icon">
+		<div><img src="__TMPL__/public/rrsb_pc/image/weixin.png" v-popover:popover/></div>
+		<div><img src="__TMPL__/public/rrsb_pc/image/weibo.png" @click="toWeibo"/></div>
+		<div><img src="__TMPL__/public/rrsb_pc/image/zaixianzixun.png" @click="isOver = true"/></div>
+	</div>
+	<div class="f-link">
+		<foreach name="flink" item="fvo" key="k">
+		<if condition="!empty($flink[($k+1)])">
+			<a href="{$fvo.href}" title = "{$fvo.title}" target="{$fvo.new_tab ? '_blank' : ''}">{$fvo.name} |</a>
+			<else/>
+			<a href="{$fvo.href}" title = "{$fvo.title}" target="{$fvo.new_tab ? '_blank' : ''}">{$fvo.name}</a>
+		</if>
+				
+		</foreach>
+	</div>
+	<div class="f-info">
+	<p>{$site_info.copyright_info}</p>
+	<p>{$site_info.license_info}</p>
+	</div>
+	<ke-fu v-if="isOver" v-on:close-dig="onClose"></ke-fu>
+</div>

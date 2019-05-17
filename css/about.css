@@ -1,0 +1,118 @@
+.content{
+    width: 100%;
+}
+.c-inner{
+    width: 1200px;
+    margin: 0 auto;
+}
+.c-inner img{
+    width: 100%;
+}
+.c-inner .i-content{
+    display: flex;
+    padding-top: 48px;
+}
+.i-content .c-left{
+    width: 297px;
+    text-align: left;
+}
+.i-content .c-right{
+    width: calc(100% - 297px);
+}
+.i-content .c-left img{
+    width: 200px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.i-content .c-right .ab-us .p1{
+    font-size: 17px;
+    color: #333333;
+    line-height: 1.7;
+    text-align: left;
+}
+.i-content .c-right .ab-us .p4{
+    text-align: left;
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333333;
+}
+.i-content .c-right .ab-us h3{
+    text-align: left;
+    margin-top: 50px;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 10px;
+    border-left: 2px solid rgb(51,51,51);
+}
+
+.i-content .c-right .ab-us .p2{
+    text-align: left;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #000000;
+}
+.i-content .c-right .ab-us .p3{
+    font-size: 17px;
+    color: #333333;
+    line-height: 1.7;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 100px;
+}
+
+.i-content2{
+    width: 100%;
+    padding-top: 48px;
+    padding-bottom: 100px;
+}
+.i-content2 .c-content-inner{
+    display: flex;
+}
+.c-content-inner .c-left{
+    width: 297px;
+    text-align: left;
+}
+.c-content-inner .c-right{
+    width: calc(100% - 297px);
+}
+.c-content-inner .c-left img{
+    width: 200px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.r-contact{
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-top: 18px;
+}
+.c-content-inner .c-right .r-contact img{
+    width: 40px;
+}
+.c-content-inner .c-right .r-contact span{
+    padding-left: 20px;
+    font-size: 22px;
+    color: #333333;
+}
+.c-content-inner .c-right p{
+    text-align: left;
+    padding-left: 50px;
+    font-size: 20px;
+    color: #333333;
+    margin: 21px auto 10px;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+.mk-info h3{
+    font-size: 15px;
+    padding: 10px 0;
+  }
+  .mk-info p{
+      line-height:  1.9;
+  }
+

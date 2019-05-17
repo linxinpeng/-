@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <include file="portal@index/header_info" />
+    <link rel="stylesheet" href="__TMPL__/public/rrsb_pc/css/detail.css">
+    <title>{$seo.site_seo_title}-{$article.post_title}</title>
+    <taglib name="app\portal\taglib\Portal" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="header">
+            <include file="portal@index/header" />
+        </div>
+        <div style="height: 80px"></div>
+        <div class="content">
+            <div class="c-header">
+                你的位置：<a href="/lists/id/{$category.id}.html"><span>{$category.name}</span></a> >
+                {$article.post_title}
+            </div>
+            <div class="c-content clearfix">
+                <div class="c-left">
+                    <h3>{$article.post_title}</h3>
+                    <p class="time">发布时间：{:date('Y-m-d H:i',$article.published_time)}</p>
+                    {$article.post_content}
+                </div>
+                <div class="c-right">
+                    <div class="r-top">
+                        <img src="/themes/simpleboot3/public/rrsb_pc/image/wb13.png" style="width: 290px"/>
+                        <div @click="toWeibo" style="cursor:pointer;display: inline-block;" onmouseover="onShow2()" onmouseout="onHide2()">
+                            <img class="wb12" style="display: none" src="/themes/simpleboot3/public/rrsb_pc/image/wb12.png" />
+                            <img class="wb11" src="/themes/simpleboot3/public/rrsb_pc/image/wb11.png"/>
+                        </div>
+                    </div>
+                    <div style="height: 20px;background:rgb(249,250,254)"></div>
+                    <div class="r-bottom">
+                        <h3><img src="/themes/simpleboot3/public/rrsb_pc/image/remen.png" />{$category.name}-热门资讯</h3>
+                        <div class="b-content">
+                            <portal:articles limit="5" item="hvo" where="$hotwhere" order="post.id DESC"
+                                categoryIds="$category.id">
+                                <div class="c-item">
+                                    <h4><a href="/detail/cid/{$category.id}/id/{$hvo.id}.html">{$hvo.post_title}</a>
+                                    </h4>
+                                    <p>{$hvo.post_excerpt}</p>
+                                </div>
+                            </portal:articles>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <php>
+                $after_content_hook_param=[
+                'object_id'=>1,
+                'table_name'=>'portal_post',
+                'object_title'=>222,
+                'user_id'=>123,
+                'url'=>1111,
+                'object'=>1111
+                ];
+            </php>
+            <hook name="after_content" param="after_content_hook_param" />
+            <div class="c-footer clearfix">
+                <div class="f-left">
+                    <div class="l-left">
+                        <h3>相关资讯</h3>
+                        <a href="/detail/id/{$about_info.id}.html">
+                            <h4>{$about_info.post_title}</h4>
+                        </a>
+                        <p>{$about_info.post_excerpt}</p>
+                    </div>
+                    <div class="l-right">
+                        <img src="__TMPL__/public/rrsb_pc/image/{:rand(1,10)}.png" />
+                    </div>
+                </div>
+                <div class="f-right">
+                    <a
+                        href="{:empty($next_article.id) ? '#':'/detail/cid/'.$category.id.'/id/'.$next_article.id.'.html'}"><img
+                            src="/themes/simpleboot3/public/rrsb_pc/image/xiayipian.png" /></a>
+                </div>
+            </div>
+        </div>
+        <include file="portal@index/footer" />
+    </div>
+    <include file="portal@index/footer_js" />
+    <script src="__TMPL__/public/rrsb_pc/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<include file="portal@index/header_info"/>
+	<title>{$seo.site_seo_title}-关于我们</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="__TMPL__/public/rrsb_pc/css/about.css">
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.14&key=9b2eca0b66b4902758d3523926555502"></script> 
+  </head>
+  <body>
+      <div id="app">
+        <include file="portal@index/header"/>
+        <div style="height: 80px"></div>
+        <div class="content">
+            <div class="c-inner">
+                <img src="__TMPL__/public/rrsb_pc/image/guanyuwm-bg1.jpg" />
+                    <div class="i-content">
+                        <div class="c-left">
+                            <img  src="__TMPL__/public/rrsb_pc/image/guanyuwm1.png" onclcik="showOne()"/>
+                            <img  src="__TMPL__/public/rrsb_pc/image/lianxiwm1.png" onclick="showTwo()"/>
+                        </div>
+                        <div class="c-right">
+                            <div class="ab-us">
+                                <p class="p1">人人社保，是厦门链脉数据服务有限公司旗下一款专注于社保公积金综合服务的APP。我们提供全国150余城社保缴纳服务；我们把晦涩难懂的社保政策简化解说，逐一分析社保用户可享受的养老、医疗、失业、工伤和生育保险，以及公积金等福利，让每个社保用户都能切切实实的享受到社保福利。此外，我们还增添了购房预测、落户咨询、记加班记账等特色功能，满足社保用户一站式搞定五险一金所有问题的需求。我们致力于为社保用户解决社保公积金如何使用等难题，并让社保用户知悉买房，买车，看病，子女入学等刚性需求涉及到的社保政策。打造专属于社保用户的掌上社保助手，我们致力于服务10亿社保用户，使其生活更便捷更有保障 。</p>
+                                <p class="p4">此外，我们还增添了购房综合服务的APP。此外，我们还增添了购房综合服务的APP。我们提供全国150余城社保缴纳服务；我们把晦涩难懂的社保政策简化解说，逐一分析社保我们提供全国150余城社保缴纳服务；我们把晦涩难懂的社保政策简化解说，逐一分析社保</p>
+                                <h3>已覆盖全国150+城市，更多城市持续开拓中……</h3>
+                                <p class="p2">服务已经覆盖的城市：</p>
+                                <p class="p3">北京、上海、深圳、厦门、杭州、南京、成都、大连、东莞、福州、广州、合肥、呼和浩特、湖州、济南、金华、昆山、宁波、石家庄、苏州（市区）、苏州（园区）、天津、无锡、武汉、义乌、中山、常州、珠海、阿拉善、安庆、鞍山、巴彦淖尔、巴中、百色、蚌埠、包头、保定、北海、潮州、池州、赤峰、崇左、滁州、达州、德阳、鄂尔多斯、防城港、佛山禅城、佛山南海、佛山顺德、阜阳、赣州、广安、广元、贵港、贵阳、桂林、哈尔滨、海口、河池、河源、贺州、呼伦贝尔、淮安、淮北、淮南、黄冈、黄山、惠州、济宁、嘉兴、江门、揭阳、九江、昆明、来宾、兰州、乐山、柳州、六安、泸州、洛阳、马鞍山、满洲里、茂名、眉山、梅州、绵阳、南昌、南充、南宁、南通、内江、攀枝花、钦州、青岛、清远、泉州、汕头、汕尾、商丘、韶关、绍兴、沈阳、苏州常熟、苏州太仓、苏州吴江、苏州新区、苏州园区(乙类)、苏州张家港、遂宁、台州、太原、泰州、唐山、通辽、铜陵、温州、乌海、乌兰察布、乌兰浩特、乌鲁木齐、无锡江阴、芜湖、梧州、西安、西昌、锡林浩特、仙桃、萧山、信阳、宿迁、徐州、许昌、宣城、雅安、盐城、阳江、宜宾、宜昌、银川、玉林、岳阳、云浮、湛江、漳州、长春、长沙、肇庆、镇江、郑州、重庆、株洲、资阳、自贡……</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="i-content2" style="display: none">
+                        <div class="c-content-inner">
+                            <div class="c-left">
+                                <img  src="__TMPL__/public/rrsb_pc/image/guanyuwm2.png" onclcik="showOne()"/>
+                                <img  src="__TMPL__/public/rrsb_pc/image/lianxiwm2.png" onclick="showTwo()"/>
+                            </div>
+                            <div class="c-right">
+                                <div class="r-contact">
+                                    <img style="cursor: pointer;" @click="isOver = true" src="__TMPL__/public/rrsb_pc/image/zaixianzixun1.png" />
+                                    <span style="cursor: pointer;" @click="isOver = true">在线咨询 ></span>
+                                </div>
+                                <p>客服在线时间：（早9：00-晚18：00）</p>
+                                <p>地址：厦门市思明区观音山商务区2号楼603室</p>
+                            </div>
+                        </div>
+                        <div id="container" style="width: 1200px;height: 500px;"></div> 
+                    </div>
+            </div>
+        </div>
+
+        <include file="portal@index/footer"/>
+      </div>
+      <include file="portal@index/footer_js"/>
+      <script src="__TMPL__/public/rrsb_pc/js/index.js"></script>
+  </body>
+  <script src="__TMPL__/public/rrsb_pc/js/Amap.js"></script>
+</html>

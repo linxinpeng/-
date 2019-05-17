@@ -1,0 +1,35 @@
+<div class="footer">
+	<div class="f-icon">
+			<!-- onmouseout="onHide()" -->
+		<div style="position: relative" onmouseover="onShow()">
+			<img class="weixin" src="__TMPL__/public/rrsb_pc/image/weixin.png"  />
+			<img class="weixinac" style="display: none"  src='__TMPL__/public/rrsb_pc/image/weixinactive.png'/>
+			<div class="footer-qrcode" style="display:none;">
+				<img src='__TMPL__/public/rrsb_pc/image/wx.png' style='width: 200px;height: 200px'/>
+				<div class="ico"></div>
+			</div>
+		</div>
+		<div onclick="toWeibo()" onmouseover="onShow2('weiboac','weibo')" onmouseout="onHide2('weiboac','weibo')">
+			<img class="weiboac" style="display: none" src="__TMPL__/public/rrsb_pc/image/weiboactive.png"/>
+			<img class="weibo"  src="__TMPL__/public/rrsb_pc/image/weibo.png"/>
+		</div>
+		<div onclick="showKefu()" onmouseover="onShow2('zaixianac','zaixian')" onmouseout="onHide2('zaixianac','zaixian')">
+			<img class="zaixianac"  style="display: none"  src="__TMPL__/public/rrsb_pc/image/zaixianzixunactive.png"/>
+			<img class="zaixian"   src="__TMPL__/public/rrsb_pc/image/zaixianzixun.png"/>
+		</div>
+	</div>
+	<div class="f-link">
+		<foreach name="flink" item="fvo" key="k">
+		<if condition="!empty($flink[($k+1)])">
+			<a href="{$fvo.href}" title = "{$fvo.title}" target="{$fvo.new_tab ? '_blank' : ''}">{$fvo.name} |</a>
+			<else/>
+			<a href="{$fvo.href}" title = "{$fvo.title}" target="{$fvo.new_tab ? '_blank' : ''}">{$fvo.name}</a>
+		</if>
+				
+		</foreach>
+	</div>
+	<div class="f-info">
+	<p>{$site_info.copyright_info}</p>
+	<p>{$site_info.license_info}</p>
+	</div>
+</div>

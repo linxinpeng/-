@@ -1,0 +1,8 @@
+<meta name="keywords" content="{$seo.site_seo_keywords}" />
+<meta name="description" content="{$seo.site_seo_description}" />
+<link rel="shortcut icon" href="__TMPL__/public/rrsb_pc/image/favicon.ico" /> 
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="__TMPL__/public/rrsb_pc/css/reset.css">
+<link rel="stylesheet" href="__TMPL__/public/rrsb_pc/css/comm.css">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>

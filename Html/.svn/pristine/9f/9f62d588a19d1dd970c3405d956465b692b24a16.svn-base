@@ -1,0 +1,17 @@
+<div class="header">
+	<div class="h-inner">
+		<div class="h-logo">
+			<img src="__TMPL__/public/rrsb_pc/image/shouye.png" height="40px"/>
+		</div>
+		<div class="h-menu">
+			<ul>
+				<foreach name="category_menu" item="cvo">
+					<if condition="$cvo.is_show">
+					<a href="/{$cvo.action}.html"><li {$cvo.action == $action ? 'style="border-bottom: 2px solid #4177fe"' : ''}  >{$cvo.name}</li></a>
+					</if>
+					
+				</foreach>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,120 @@
+.active{
+  border-bottom: 2px solid #ccc;
+}
+
+.footer {
+    min-width: 1200px;
+    width: 100%;
+    background: #232c3d;
+    font-size: 14px;
+    color: #fff;
+    padding: 10px 0;
+  }
+  .footer .f-link a {
+    cursor: pointer;
+    font-size: 14px;
+    color: #ffffff;
+  }
+  .footer .f-icon {
+    margin: 20px auto;
+  }
+  .footer .f-icon div {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #000;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .footer .f-info {
+    margin-top: 20px;
+  }
+  .footer .f-info p {
+    line-height: 2;
+  }
+
+  .header {
+    height: 80px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 1px 3px #eee;
+  }
+  .header .h-inner {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .header .h-inner .h-logo {
+    width: 213px;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    /* margin-left: 100px; */
+  }
+  .header .h-inner .h-menu {
+    float: right;
+    height: 100%;
+    /* margin-right: 200px; */
+  }
+  .header .h-inner .h-menu ul {
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+  }
+  .header .h-inner .h-menu ul li {
+    display: inline-block;
+    padding-bottom: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333333;
+    margin: auto 35px;
+  }
+  .header .h-inner .h-menu ul li:hover {
+    border-bottom: 2px solid #4177fe;
+  }
+  .back-to-top{
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    background: #fff;
+    z-index: 99;
+    box-shadow: 0 0 2px #ccc;
+    cursor: pointer;
+  }
+  .back-to-top .t-back{
+    width: 48px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+  }
+  .back-to-top .t-kefu{
+      width: 48px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .footer-qrcode{
+    position: absolute;
+    top: -215px;
+    left: -75px;
+    z-index: 99;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    padding: 3px;
+    width: 200px !important;
+    height: 200px !important;
+    background: #fff;
+    margin: 0 !important;
+  }

@@ -1,0 +1,90 @@
+﻿
+
+var KeFu = {
+    data(){
+        return{
+            isOver: true
+        }
+    },
+    methods:{
+        onClose(){
+            this.$emit('close-dig',false)
+        }
+    },
+    template:`
+    <div class="i-kefu" style="position: fixed;bottom: 0;right: 140px;background: #fff;z-index: 9999;" v-show="isOver">
+        <div class="k-inner" style="position: relative;">
+            <iframe frameborder="0" src="https://v1.live800.com/live800/chatClient/chatbox.jsp?companyID=1083882&configID=45909&jid=8958708632&skillId=3046&s=1&enterurl=rrsb_pc"
+                width="450px"
+                height="500px"
+                ></iframe>
+            <span class="i-close" style="position: absolute;
+                top: 0;
+                right: 0;
+                height: 56px;
+                width: 56px;
+                z-index: 1;
+                cursor: pointer;" @click="onClose"></span>
+            <span class="i-over" style=" position: absolute;
+                bottom: 16px;
+                right: 107px;
+                width: 85px;
+                height: 25px;
+                cursor: pointer;
+                z-index: 1;" @click="onClose"></span>
+        </div>
+    </div>
+    `
+}
+
+
+var info = new Vue({
+    el: '#app',
+    data:{
+        nowYear: 0,
+        isOver: false,
+        isShow1:true,
+        isShow2:true,
+        showDown: true,
+        tag: 0,
+        page:1,
+        show: true,
+        close: false
+    },
+    components:{KeFu,QrCode},
+    created(){
+        const data = new Date();
+        this.nowYear = data.getFullYear();
+    },
+    mounted(){
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    destroyed(){
+        window.removeEventListener('scroll', this.handleScroll)
+    },
+    methods:{
+        onClose(r){
+            this.isOver = r;
+        },
+        toWeibo(){
+            window.open('https://weibo.com/u/6620754631')
+        },
+        backTop(){
+            $(document).scrollTop() > 0&&$('body,html').animate({scrollTop:0},500);
+         },
+         submit(){
+             if(!this.page){
+                returns
+             }
+             location.href="http://www.baidu.com"
+         },
+          handleScroll(){
+            this.showDown = $(document).scrollTop() > 800? false:true;
+          },
+
+    }
+})
+
+
+
+

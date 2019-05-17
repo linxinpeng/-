@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<include file="portal@index/header_info"/>
+	<title>{$seo.site_seo_title}-{$keyword}-搜索</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="__TMPL__/public/rrsb_pc/css/info.css">
+	
+	<taglib name="app\portal\taglib\Portal"/>
+  </head>
+  <body>
+    <div id="app">
+        <include file="portal@index/header"/>
+        <div style="height: 80px"></div>
+        <div class="content">
+            <div class="search">
+                <ul>
+                    <a href ="#" ><li style="color:#4077ff">全部</li></a>
+					<portal:categories where="$where" item="vo" order="list_order asc">
+						<a href ="/lists/id/{$vo.id}.html" ><li style="color:#333333">{$vo.more.alias_title | default = $vo.name}</li></a>
+					</portal:categories>
+                </ul>
+                <form action="/search.html" ref="form">
+                    <input type="text" placeholder="请输入关键词搜索" value="{$keyword}" name="keyword" @keydown.enter="onSubmit"/>
+                </form>
+                <img src="__TMPL__/public/rrsb_pc/image/sousuo.png" />
+            </div>
+            <div v-if="tag == 0">
+			<portal:articles limit="5" order="post.id DESC" where="$swhere" page="$page">
+				<div class="c-content">
+                    <div class="c-inner">
+                        <div style="width: 215px;">
+                            <img src="__TMPL__/public/rrsb_pc/image/{$key + 1}.png" alt="{$vo.post_title}"/>
+                        </div>
+                        <div class="i-info">
+                            <a href="/detail/cid/{$vo.category_id}/id/{$vo.id}.html"><h3>{$vo.post_title}</h3></a>
+                            <p>{$vo.post_excerpt}</p>
+                        </div>
+                    </div>
+                </div>
+			</portal:articles>
+            </div>
+			
+            <div class="i-page">
+				<ul class="pagination">
+					<page/>
+				</ul>
+                <div class="go">
+                    <span class="g-s1">前往</span>
+                    <div style="width: 51px;height: 28px;">
+                        <input id="input-page" style="width: 42px;height: 23px;"  oninput="value=value.replace(/[^\d]/g,'')"></input>
+                    </div>
+                    <span class="g-s2">页</span>
+                </div>
+            </div>
+        </div>
+
+        <include file="portal@index/footer"/>
+    </div>
+    <include file="portal@index/footer_js"/>
+  </body>
+  </html>
